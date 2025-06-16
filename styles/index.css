@@ -40,3 +40,8 @@ input {
     border: none;
     outline: none;
 }
+
+.peer:checked ~ .dot {
+    transform: translateX(100%);
+}
+
