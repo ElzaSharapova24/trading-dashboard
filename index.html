@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="styles/index.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="scripts/index.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -12,7 +13,7 @@
                         'dark-bg': '#050505',
                         'dark-panel': '#1F1F1F',
                         'grey-text-color': '#999999',
-                        'white-text-color': '#FFFFFF',
+                        'white': '#FFFFFF',
                         'inputColor': '#191919',
                         'green': '#0FEDBE',
                         'red': '#F63C6B',
@@ -25,177 +26,183 @@
                     },
                     backgroundImage: {
                         'active-tab': 'linear-gradient(180deg, rgba(9, 135, 108, 0.1) 32.15%, rgba(15, 237, 190, 0.25) 100%)',
-                    }
-
+                    },
                 }
             }
         }
     </script>
-    <title>Title</title>
+    <title>MSFT Stock Trading Dashboard - Microsoft Corp</title>
 </head>
 <body class="max-w-[1440px] mx-auto bg-dark-bg font-golos">
 <div class="flex min-h-screen">
     <aside class="w-[60px] bg-dark-bg border-r border-gray-800 flex flex-col ">
-        <div class="mb-[80px] p-4">
-            <a href="/" class="block" aria-label="Home">
+        <div class="mb-[82px] pl-3 pt-4">
+            <a href="#" class="block" aria-label="Home">
                 <img src="assets/images/Logo.svg" alt="Logo" class=""/>
             </a>
         </div>
         <nav class="flex flex-col h-full" role="navigation" aria-label="Main navigation">
-            <ul class="flex flex-col items-center gap-4 flex-1">
+            <ul class="flex flex-col items-center gap-[25px] flex-1 p-[15px]">
                 <li>
-                    <button class="tab active p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Dashboard" aria-current="page">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.0001 9.005C13.061 9.005 14.0784 9.42643 14.8285 10.1766C15.5787 10.9267 16.0001 11.9441 16.0001 13.005C16.0001 14.0659 15.5787 15.0833 14.8285 15.8334C14.0784 16.5836 13.061 17.005 12.0001 17.005C10.9392 17.005 9.9218 16.5836 9.17166 15.8334C8.42151 15.0833 8.00008 14.0659 8.00008 13.005C8.00008 11.9441 8.42151 10.9267 9.17166 10.1766C9.9218 9.42643 10.9392 9.005 12.0001 9.005ZM12.0001 5.5C16.6131 5.5 20.5961 8.65 21.7011 13.064C21.7495 13.2569 21.7193 13.4612 21.6171 13.6319C21.5148 13.8025 21.349 13.9256 21.1561 13.974C20.9631 14.0224 20.7589 13.9922 20.5882 13.89C20.4176 13.7878 20.2945 13.6219 20.2461 13.429C19.7838 11.5918 18.7213 9.9616 17.2271 8.79704C15.7328 7.63248 13.8925 7.00028 11.998 7.00074C10.1036 7.0012 8.26353 7.6343 6.76986 8.79958C5.27619 9.96486 4.21444 11.5956 3.75308 13.433C3.70127 13.6219 3.5776 13.7831 3.4085 13.882C3.23941 13.9809 3.03832 14.0098 2.84824 13.9623C2.65816 13.9149 2.49418 13.795 2.39137 13.6283C2.28856 13.4615 2.25508 13.2611 2.29808 13.07C2.84036 10.9075 4.08954 8.98806 5.84729 7.61657C7.60504 6.24509 9.77059 5.50013 12.0001 5.5Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px] mb-[15px]"
+                            aria-label="Dashboard" aria-current="page">
+                        <img src="assets/images/svg1.svg"
+                             alt="Dashboard icon"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab active p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Dashboard" aria-current="page">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.90386 16.5H15.0959C14.4759 19.773 13.2339 22 11.9999 22C10.8029 22 9.59986 19.906 8.96186 16.796L8.90386 16.502V16.5ZM3.06586 16.501H7.36986C7.73486 18.583 8.35286 20.355 9.16286 21.594C6.62039 20.8394 4.48031 19.1085 3.21086 16.78L3.06586 16.501ZM16.6289 16.501H20.9339C20.3181 17.7204 19.4596 18.8012 18.4112 19.677C17.3628 20.5528 16.1464 21.2051 14.8369 21.594C15.5919 20.436 16.1809 18.816 16.5519 16.913L16.6289 16.501ZM16.9309 10.001H21.8009C22.1381 11.6626 22.0497 13.3826 21.5439 15.001H16.8399C16.9935 13.5584 17.037 12.1062 16.9699 10.657L16.9299 9.99995L16.9309 10.001ZM2.19786 9.99995H7.06786C6.96358 11.4719 6.97495 12.9498 7.10186 14.42L7.15886 15H2.45586C1.94932 13.3818 1.86056 11.6617 2.19786 9.99995ZM8.57486 9.99995H15.4249C15.5391 11.4733 15.5267 12.9537 15.3879 14.425L15.3259 15H8.67386C8.49903 13.5026 8.45487 11.9929 8.54186 10.488L8.57486 9.99995ZM14.9449 2.57595L14.8359 2.40595C16.3223 2.8472 17.6862 3.62718 18.8203 4.68458C19.9544 5.74197 20.8278 7.04798 21.3719 8.49995H16.7799C16.4639 6.08395 15.8239 4.00795 14.9429 2.57695L14.9449 2.57595ZM9.04186 2.44295L9.16386 2.40595C8.28286 3.75695 7.62786 5.73595 7.27986 8.05995L7.21886 8.49995H2.62786C3.16445 7.06817 4.02134 5.77805 5.13302 4.72825C6.2447 3.67844 7.58173 2.89675 9.04186 2.44295ZM11.9999 2.00195C13.3189 2.00195 14.6459 4.54395 15.2139 8.18495L15.2609 8.49995H8.73886C9.27986 4.69095 10.6429 2.00195 11.9999 2.00195Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Reports">
+                        <img src="assets/images/svg2.svg"
+                             alt="Reports icon"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab active p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Dashboard" aria-current="page">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.25" width="47.5" height="47.5" rx="23.75" fill="url(#paint0_radial_1_4837)" fill-opacity="0.1"/>
-                            <rect x="0.75" y="0.5" width="46.5" height="46.5" rx="23.25" stroke="#2DCAFF" stroke-opacity="0.25"/>
-                            <path d="M17.25 16C17.25 15.7348 17.1446 15.4804 16.9571 15.2929C16.7696 15.1054 16.5152 15 16.25 15C15.9848 15 15.7304 15.1054 15.5429 15.2929C15.3554 15.4804 15.25 15.7348 15.25 16V30C15.25 30.663 15.5134 31.2989 15.9822 31.7678C16.4511 32.2366 17.087 32.5 17.75 32.5H31.75C32.0152 32.5 32.2696 32.3946 32.4571 32.2071C32.6446 32.0196 32.75 31.7652 32.75 31.5C32.75 31.2348 32.6446 30.9804 32.4571 30.7929C32.2696 30.6054 32.0152 30.5 31.75 30.5H17.75C17.6174 30.5 17.4902 30.4473 17.3964 30.3536C17.3027 30.2598 17.25 30.1326 17.25 30V16ZM26 18.75C26 18.4848 26.1054 18.2304 26.2929 18.0429C26.4804 17.8554 26.7348 17.75 27 17.75H31.502C31.7672 17.75 32.0216 17.8554 32.2091 18.0429C32.3966 18.2304 32.502 18.4848 32.502 18.75L32.5 23.25C32.5 23.5152 32.3946 23.7696 32.2071 23.9571C32.0196 24.1446 31.7652 24.25 31.5 24.25C31.2348 24.25 30.9804 24.1446 30.7929 23.9571C30.6054 23.7696 30.5 23.5152 30.5 23.25V21.164L25.957 25.707C25.7695 25.8945 25.5152 25.9998 25.25 25.9998C24.9848 25.9998 24.7305 25.8945 24.543 25.707L22.75 23.914L20.207 26.457C20.0184 26.6392 19.7658 26.74 19.5036 26.7377C19.2414 26.7354 18.9906 26.6302 18.8052 26.4448C18.6198 26.2594 18.5146 26.0086 18.5123 25.7464C18.51 25.4842 18.6108 25.2316 18.793 25.043L22.043 21.793C22.2305 21.6055 22.4848 21.5002 22.75 21.5002C23.0152 21.5002 23.2695 21.6055 23.457 21.793L25.25 23.586L29.086 19.75H27C26.7348 19.75 26.4804 19.6446 26.2929 19.4571C26.1054 19.2696 26 19.0152 26 18.75Z" fill="#00BDDD"/>
-                            <defs>
-                                <radialGradient id="paint0_radial_1_4837" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(24 23.75) rotate(90) scale(23.75)">
-                                    <stop stop-color="#2DCAFF"/>
-                                    <stop offset="0.738214" stop-color="#7DDEFF" stop-opacity="0.25"/>
-                                </radialGradient>
-                            </defs>
-                        </svg>
-
+                    <button class="relative w-full h-full
+               after:content-[''] after:absolute after:bottom-[-17px] after:left-[112%] after:w-[1px] after:h-[80px]
+               after:bg-[linear-gradient(to_bottom,transparent,theme(colors.active-blue/80),theme(colors.active-blue),theme(colors.active-blue/80),transparent)]
+               after:opacity-100 after:pointer-events-none"
+                            aria-label="Analytics"
+                            aria-current="page">
+                        <img src="assets/images/svg10.svg"
+                             alt="Analytics icon"
+                             class="max-w-none"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab active p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Dashboard" aria-current="page">
-                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.25 6.545V6.25C19.25 5.52065 18.9603 4.82118 18.4445 4.30546C17.9288 3.78973 17.2293 3.5 16.5 3.5H5.25C4.94116 3.50005 4.63564 3.56368 4.35246 3.68693C4.06928 3.81018 3.81451 3.99041 3.604 4.21639C3.3935 4.44238 3.23177 4.70928 3.12889 5.00047C3.02601 5.29167 2.98418 5.60093 3.006 5.909C3.00217 5.93919 3.00017 5.96957 3 6V18.25C3 19.112 3.34241 19.9386 3.9519 20.5481C4.5614 21.1576 5.38805 21.5 6.25 21.5H18.75C19.4793 21.5 20.1788 21.2103 20.6945 20.6945C21.2103 20.1788 21.5 19.4793 21.5 18.75V9.25C21.5002 8.60725 21.2752 7.98473 20.8642 7.49058C20.4532 6.99643 19.882 6.66186 19.25 6.545ZM5.25 5H16.5C17.19 5 17.75 5.56 17.75 6.25V6.5H5.25C5.05109 6.5 4.86032 6.42098 4.71967 6.28033C4.57902 6.13968 4.5 5.94891 4.5 5.75C4.5 5.55109 4.57902 5.36032 4.71967 5.21967C4.86032 5.07902 5.05109 5 5.25 5ZM16.25 13.5H18.25C18.4489 13.5 18.6397 13.579 18.7803 13.7197C18.921 13.8603 19 14.0511 19 14.25C19 14.4489 18.921 14.6397 18.7803 14.7803C18.6397 14.921 18.4489 15 18.25 15H16.25C16.0511 15 15.8603 14.921 15.7197 14.7803C15.579 14.6397 15.5 14.4489 15.5 14.25C15.5 14.0511 15.579 13.8603 15.7197 13.7197C15.8603 13.579 16.0511 13.5 16.25 13.5Z" fill="#999999"/>
-                        </svg>
+                    <button class="tab rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Portfolio">
+                        <img src="assets/images/svg3.svg"
+                             alt="Portfolio icon"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab active p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Dashboard" aria-current="page">
-                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.754 10.5C15.72 10.5 16.504 11.284 16.504 12.25V16.999C16.504 18.1927 16.0298 19.3376 15.1857 20.1817C14.3416 21.0258 13.1967 21.5 12.003 21.5C10.8093 21.5 9.66441 21.0258 8.82031 20.1817C7.97621 19.3376 7.502 18.1927 7.502 16.999V12.25C7.502 11.284 8.285 10.5 9.252 10.5H14.754ZM7.131 10.5C6.781 10.922 6.556 11.45 6.511 12.03L6.501 12.25V16.999C6.501 17.846 6.693 18.648 7.035 19.364C6.44228 19.5226 5.82103 19.5427 5.21929 19.4228C4.61756 19.3029 4.05145 19.0463 3.56475 18.6727C3.07805 18.2991 2.68379 17.8185 2.41246 17.2682C2.14114 16.7179 2.00001 16.1126 2 15.499V12.25C2.00002 11.8108 2.16517 11.3877 2.46268 11.0646C2.76019 10.7415 3.1683 10.5421 3.606 10.506L3.75 10.5H7.131ZM16.875 10.5H20.25C21.216 10.5 22 11.284 22 12.25V15.5C22.0001 16.1132 21.8593 16.7182 21.5884 17.2682C21.3175 17.8183 20.9237 18.2987 20.4376 18.6724C19.9514 19.046 19.3858 19.3029 18.7846 19.4232C18.1833 19.5435 17.5625 19.5239 16.97 19.366C17.27 18.738 17.454 18.046 17.495 17.314L17.504 16.999V12.25C17.504 11.585 17.269 10.975 16.875 10.5ZM12 3.5C12.7956 3.5 13.5587 3.81607 14.1213 4.37868C14.6839 4.94129 15 5.70435 15 6.5C15 7.29565 14.6839 8.05871 14.1213 8.62132C13.5587 9.18393 12.7956 9.5 12 9.5C11.2044 9.5 10.4413 9.18393 9.87868 8.62132C9.31607 8.05871 9 7.29565 9 6.5C9 5.70435 9.31607 4.94129 9.87868 4.37868C10.4413 3.81607 11.2044 3.5 12 3.5ZM18.5 4.5C19.163 4.5 19.7989 4.76339 20.2678 5.23223C20.7366 5.70107 21 6.33696 21 7C21 7.66304 20.7366 8.29893 20.2678 8.76777C19.7989 9.23661 19.163 9.5 18.5 9.5C17.837 9.5 17.2011 9.23661 16.7322 8.76777C16.2634 8.29893 16 7.66304 16 7C16 6.33696 16.2634 5.70107 16.7322 5.23223C17.2011 4.76339 17.837 4.5 18.5 4.5ZM5.5 4.5C6.16304 4.5 6.79893 4.76339 7.26777 5.23223C7.73661 5.70107 8 6.33696 8 7C8 7.66304 7.73661 8.29893 7.26777 8.76777C6.79893 9.23661 6.16304 9.5 5.5 9.5C4.83696 9.5 4.20107 9.23661 3.73223 8.76777C3.26339 8.29893 3 7.66304 3 7C3 6.33696 3.26339 5.70107 3.73223 5.23223C4.20107 4.76339 4.83696 4.5 5.5 4.5Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Settings">
+                        <img src="assets/images/svg4.svg"
+                             alt="Settings icon"/>
                     </button>
                 </li>
             </ul>
-
-            <ul class="flex flex-col items-center gap-4 mt-auto">
+            <ul class="flex flex-col items-center gap-8 mb-[21px] mt-auto">
                 <li>
-                    <button class="tab p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Settings">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.0122 2.25C12.7462 2.258 13.4772 2.343 14.1942 2.503C14.3468 2.53705 14.4848 2.6179 14.5892 2.73426C14.6935 2.85062 14.7589 2.99667 14.7762 3.152L14.9462 4.679C14.9702 4.89428 15.0444 5.10093 15.1629 5.28231C15.2813 5.46368 15.4406 5.61473 15.6281 5.72329C15.8155 5.83185 16.0259 5.89489 16.2421 5.90735C16.4584 5.9198 16.6745 5.88132 16.8732 5.795L18.2742 5.18C18.4165 5.11735 18.5747 5.10044 18.7269 5.13161C18.8792 5.16278 19.018 5.24049 19.1242 5.354C20.1362 6.43509 20.8897 7.73161 21.3282 9.146C21.3742 9.29464 21.3728 9.45389 21.3243 9.60171C21.2757 9.74953 21.1824 9.87858 21.0572 9.971L19.8152 10.887C19.6406 11.0153 19.4985 11.1829 19.4007 11.3763C19.3028 11.5696 19.2518 11.7833 19.2518 12C19.2518 12.2167 19.3028 12.4304 19.4007 12.6237C19.4985 12.8171 19.6406 12.9847 19.8152 13.113L21.0582 14.028C21.1838 14.1204 21.2774 14.2495 21.3262 14.3976C21.3749 14.5456 21.3763 14.7051 21.3302 14.854C20.8916 16.2683 20.138 17.5648 19.1262 18.646C19.0203 18.7593 18.8819 18.8369 18.73 18.8682C18.5782 18.8996 18.4203 18.8831 18.2782 18.821L16.8712 18.204C16.6728 18.117 16.4567 18.0779 16.2404 18.09C16.0241 18.102 15.8136 18.1648 15.6261 18.2733C15.4386 18.3817 15.2792 18.5328 15.1609 18.7143C15.0426 18.8958 14.9687 19.1026 14.9452 19.318L14.7762 20.844C14.7592 20.9976 14.6951 21.1423 14.5927 21.2581C14.4903 21.3739 14.3546 21.4553 14.2042 21.491C12.7558 21.8356 11.2467 21.8356 9.79822 21.491C9.64782 21.4553 9.51214 21.3739 9.40975 21.2581C9.30736 21.1423 9.24326 20.9976 9.22622 20.844L9.05822 19.32C9.03372 19.1052 8.95916 18.8991 8.84053 18.7183C8.72191 18.5376 8.56252 18.3872 8.37519 18.2792C8.18786 18.1712 7.97782 18.1087 7.76194 18.0967C7.54606 18.0847 7.33037 18.1235 7.13222 18.21L5.72622 18.826C5.58399 18.8883 5.42594 18.9049 5.27387 18.8736C5.1218 18.8422 4.98321 18.7645 4.87722 18.651C3.86492 17.5686 3.11135 16.2707 2.67322 14.855C2.62711 14.7061 2.62853 14.5466 2.67728 14.3986C2.72602 14.2505 2.81968 14.1214 2.94522 14.029L4.18822 13.113C4.36306 12.9848 4.50525 12.8173 4.60327 12.6239C4.70128 12.4305 4.75235 12.2168 4.75235 12C4.75235 11.7832 4.70128 11.5695 4.60327 11.3761C4.50525 11.1827 4.36306 11.0152 4.18822 10.887L2.94522 9.973C2.81985 9.88052 2.7264 9.75129 2.67784 9.60327C2.62927 9.45525 2.62801 9.29577 2.67422 9.147C3.11274 7.73262 3.8663 6.43611 4.87822 5.355C4.9844 5.24149 5.12323 5.16378 5.2755 5.13261C5.42777 5.10144 5.58597 5.11835 5.72822 5.181L7.12822 5.796C7.32723 5.88227 7.54371 5.92066 7.76026 5.90809C7.97681 5.89551 8.18739 5.83232 8.37509 5.7236C8.56278 5.61487 8.72236 5.46363 8.841 5.28204C8.95964 5.10045 9.03404 4.89356 9.05822 4.678L9.22822 3.152C9.24537 2.99635 9.31082 2.84998 9.41537 2.73341C9.51993 2.61684 9.65835 2.53592 9.81122 2.502C10.5282 2.343 11.2612 2.259 12.0122 2.25ZM12.0002 9C11.2046 9 10.4415 9.31607 9.87889 9.87868C9.31629 10.4413 9.00022 11.2044 9.00022 12C9.00022 12.7956 9.31629 13.5587 9.87889 14.1213C10.4415 14.6839 11.2046 15 12.0002 15C12.7959 15 13.5589 14.6839 14.1215 14.1213C14.6841 13.5587 15.0002 12.7956 15.0002 12C15.0002 11.2044 14.6841 10.4413 14.1215 9.87868C13.5589 9.31607 12.7959 9 12.0002 9Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Help">
+                        <img src="assets/images/svg5.svg"
+                             alt="Help icon"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Settings">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 8.608V16.75C22.0001 17.5801 21.6824 18.3788 21.1123 18.9822C20.5422 19.5856 19.7628 19.948 18.934 19.995L18.75 20H5.25C4.41986 20.0001 3.62117 19.6824 3.01777 19.1123C2.41437 18.5422 2.052 17.7628 2.005 16.934L2 16.75V8.608L11.652 13.664C11.7594 13.7202 11.8788 13.7496 12 13.7496C12.1212 13.7496 12.2406 13.7202 12.348 13.664L22 8.608ZM5.25 4H18.75C19.5556 3.9999 20.3325 4.299 20.93 4.83927C21.5276 5.37954 21.9032 6.12248 21.984 6.924L12 12.154L2.016 6.924C2.09352 6.15431 2.44305 5.43752 3.00175 4.90246C3.56045 4.36741 4.29168 4.04919 5.064 4.005L5.25 4Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Notifications">
+                        <img src="assets/images/svg6.svg"
+                             alt="Notifications icon"/>
                     </button>
                 </li>
                 <li>
-                    <button class="tab p-2 rounded hover:bg-gray-700 transition-colors" aria-label="Settings">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C10.3822 22.0021 8.78829 21.6102 7.35601 20.858L3.06601 21.975C2.92267 22.0123 2.77205 22.0116 2.6291 21.9728C2.48615 21.934 2.35582 21.8585 2.25102 21.7538C2.14623 21.6491 2.07062 21.5188 2.03168 21.3759C1.99273 21.233 1.99181 21.0824 2.02901 20.939L3.14501 16.65C2.39081 15.2162 1.99778 13.6201 2.00001 12C2.00001 6.477 6.47701 2 12 2ZM12 15.5C11.7348 15.5 11.4804 15.6054 11.2929 15.7929C11.1054 15.9804 11 16.2348 11 16.5C11 16.7652 11.1054 17.0196 11.2929 17.2071C11.4804 17.3946 11.7348 17.5 12 17.5C12.2652 17.5 12.5196 17.3946 12.7071 17.2071C12.8947 17.0196 13 16.7652 13 16.5C13 16.2348 12.8947 15.9804 12.7071 15.7929C12.5196 15.6054 12.2652 15.5 12 15.5ZM12 6.75C11.2707 6.75 10.5712 7.03973 10.0555 7.55546C9.53974 8.07118 9.25001 8.77065 9.25001 9.5C9.25007 9.69002 9.32225 9.87294 9.45198 10.0118C9.58171 10.1506 9.75931 10.2351 9.94889 10.248C10.1385 10.261 10.3259 10.2015 10.4733 10.0816C10.6207 9.96165 10.7171 9.79025 10.743 9.602L10.757 9.372C10.7908 9.05406 10.9451 8.76115 11.1882 8.55351C11.4314 8.34587 11.7448 8.23929 12.0641 8.25568C12.3834 8.27208 12.6843 8.4102 12.9049 8.64165C13.1255 8.8731 13.249 9.18028 13.25 9.5C13.25 10.039 13.115 10.305 12.605 10.832L12.301 11.142C11.547 11.926 11.25 12.489 11.25 13.5C11.25 13.6989 11.329 13.8897 11.4697 14.0303C11.6103 14.171 11.8011 14.25 12 14.25C12.1989 14.25 12.3897 14.171 12.5303 14.0303C12.671 13.8897 12.75 13.6989 12.75 13.5C12.75 12.961 12.885 12.695 13.395 12.168L13.699 11.858C14.453 11.074 14.75 10.511 14.75 9.5C14.75 8.77065 14.4603 8.07118 13.9446 7.55546C13.4288 7.03973 12.7294 6.75 12 6.75Z" fill="#999999"/>
-                        </svg>
+                    <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
+                            aria-label="Profile">
+                        <img src="assets/images/svg7.svg"
+                             alt="Profile icon"/>
                     </button>
                 </li>
             </ul>
         </nav>
     </aside>
     <div class="flex-1 flex flex-col mx-auto">
-        <header class="bg-dark-bg border-b border-gray-800 flex justify-between items-center py-4 px-5" role="banner">
+        <header class="bg-dark-bg border-b border-gray-800 flex justify-between items-center pt-4 pb-[13px] px-5"
+                role="banner">
             <div class="flex items-center gap-2">
                 <button class="hover:bg-gray-700 rounded transition-colors" aria-label="Toggle menu">
-                    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 4.66669L0 0.666687H8L4 4.66669Z" fill="white"/>
-                    </svg>
+                    <img src="assets/images/Vector.svg" alt="Menu toggle icon"/>
                 </button>
-                <img src="assets/images/Ellipse%2048.svg" alt="User avatar" class="w-6 h-6 rounded-full"/>
+                <img src="assets/images/avatar.svg" alt="User avatar" class="w-6 h-6 rounded-full"/>
                 <div class="mr-2">
-                    <p class="text-white-text-color font-medium text-sm leading-5">James Raymond</p>
+                    <p class="text-white font-medium text-sm leading-6">James Raymond</p>
                     <p class="text-grey-text-color font-regular text-xs leading-5">Account: <span>4453728992</span></p>
                 </div>
-                <span class="text-white">|</span>
+                <span class="text-white mr-1">|</span>
                 <button class="hover:bg-gray-700 rounded transition-colors mr-4" aria-label="Notifications">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.02803 12.6687H9.97203C9.89322 13.1347 9.65194 13.5577 9.29096 13.8627C8.92999 14.1678 8.47264 14.3352 8.00003 14.3352C7.52742 14.3352 7.07007 14.1678 6.7091 13.8627C6.34812 13.5577 6.10683 13.1347 6.02803 12.6687ZM8.00003 1.33533C9.32611 1.33533 10.5979 1.86211 11.5356 2.79979C12.4732 3.73748 13 5.00924 13 6.33533V9.00199L13.9454 11.1087C13.9883 11.205 14.0066 11.3106 13.9984 11.4158C13.9902 11.5209 13.9559 11.6224 13.8985 11.711C13.8412 11.7995 13.7626 11.8723 13.67 11.9228C13.5773 11.9733 13.4735 11.9998 13.368 12H2.6347C2.52905 12 2.42509 11.9735 2.33227 11.9231C2.23946 11.8726 2.16074 11.7997 2.10329 11.7111C2.04584 11.6224 2.01149 11.5208 2.00335 11.4155C1.99521 11.3101 2.01355 11.2044 2.0567 11.108L3.00003 9.00133V6.32666L3.00336 6.15999C3.04897 4.86523 3.59536 3.63871 4.52743 2.73885C5.4595 1.839 6.70446 1.33539 8.00003 1.33533Z" fill="white"/>
-                    </svg>
+                    <img src="assets/images/notifications.svg"
+                         alt="Notifications icon"/>
                 </button>
                 <div class="flex gap-8">
                     <div>
                         <p class="text-grey-text-color font-regular text-xs leading-5">Portfolio Balance</p>
-                        <p class="text-white-text-color font-medium text-sm leading-5">$623,098.17</p>
+                        <p class="text-white font-medium text-sm leading-5">$623,098.17</p>
                     </div>
                     <div>
                         <p class="text-grey-text-color font-regular text-xs leading-5">Available Funds</p>
-                        <p class="text-white-text-color font-medium text-sm leading-5">$122,912.50</p>
+                        <p class="text-white font-medium text-sm leading-5">$122,912.50</p>
                     </div>
                 </div>
             </div>
-
             <form class="w-[226px] max-w-full">
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <label for="default-search" class="mb-2 text-sm font-medium sr-only">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
+                        <img src="assets/images/searchIcon.svg"
+                             alt="Search icon" aria-hidden="true"/>
                     </div>
-                    <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-dark-panel dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required />
+                    <input type="search"
+                           id="default-search"
+                           class="block w-full border border-gray-600 p-2 ps-10 text-sm text-white rounded-lg bg-inputColor placeholder-gray-text-color
+                                 hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
+                                 dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue"
+                           placeholder="Search"
+                           required
+                    />
+
                 </div>
             </form>
         </header>
         <main class="flex-1" role="main">
             <div class="flex">
-                <!-- Основная секция с данными о акции -->
                 <section class="w-[1019px] pt-2 px-2" aria-labelledby="stock-heading">
-                    <nav class="py-5 pl-[48px] bg-dark-panel rounded-t-[8px]" role="navigation" aria-label="Stock data navigation">
+                    <nav class="py-5 pl-[48px] bg-dark-panel rounded-t-[4px]" role="navigation"
+                         aria-label="Stock data navigation">
                         <ul class="flex text-sm gap-[54px]">
                             <li class="relative">
                                 <a href="#chart"
                                    class="relative text-neon-blue outline outline-1 outline-active-neon-blue outline-offset-[7px] rounded-[8px] transition-colors
-            after:content-[''] after:absolute after:bottom-[-22px] after:left-[-12px] after:w-[62px] after:h-[2px]
-            after:bg-[linear-gradient(to_right,transparent,theme(colors.active-blue/60),theme(colors.active-blue),theme(colors.active-blue/60),transparent)]
-            after:opacity-100 after:pointer-events-none"
+                                   after:content-[''] after:absolute after:bottom-[-22px] after:left-[-12px] after:w-[62px] after:h-[2px]
+                                   after:bg-[linear-gradient(to_right,transparent,theme(colors.active-blue/60),theme(colors.active-blue),theme(colors.active-blue/60),transparent)]
+                                   after:opacity-100 after:pointer-events-none"
                                    role="menuitem">
                                     Chart
                                 </a>
                             </li>
                             <li>
-                                <a href="#options" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Options</a>
+                                <a href="#options" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Options</a>
                             </li>
                             <li>
-                                <a href="#news" class="text-gray-400 hover:text-white transition-colors" role="menuitem">News</a>
+                                <a href="#news" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">News</a>
                             </li>
                             <li>
-                                <a href="#financials" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Financials</a>
+                                <a href="#financials" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Financials</a>
                             </li>
                             <li>
-                                <a href="#analysts" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Analysts</a>
+                                <a href="#analysts" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Analysts</a>
                             </li>
                             <li>
-                                <a href="#risk-analysis" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Risk Analysis</a>
+                                <a href="#risk-analysis" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Risk Analysis</a>
                             </li>
                             <li>
-                                <a href="#releases" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Releases</a>
+                                <a href="#releases" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Releases</a>
                             </li>
                             <li>
-                                <a href="#notes" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Notes</a>
+                                <a href="#notes" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Notes</a>
                             </li>
                             <li>
-                                <a href="#profile" class="text-gray-400 hover:text-white transition-colors" role="menuitem">Profile</a>
+                                <a href="#profile" class="text-gray-400 hover:text-active-blue transition-colors"
+                                   role="menuitem">Profile</a>
                             </li>
                         </ul>
                     </nav>
@@ -204,41 +211,28 @@
                         <div class="flex flex-col">
                             <div class="flex gap-3">
                                 <hgroup class="flex items-center mb-2.5 gap-2">
-                                    <h1 id="stock-heading" class="text-xl font-semibold text-white">MSFT</h1>
-                                    <dl class="flex items-center">
-                                        <div class="">
-                                            <dt class="sr-only">Company Name</dt>
-                                            <dd class="text-gray-400 text-sm">Microsoft Corp</dd>
-                                        </div>
-                                        <div class="">
-                                            <dt class="sr-only">Exchange</dt>
-                                            <dd class="text-gray-400 text-sm">NASDAQ</dd>
-                                        </div>
+                                    <h1 id="stock-heading" class="text-xl font-semibold text-white">MSFT - Microsoft Corp Stock</h1>
+                                    <dl class="flex items-center gap-2">
+                                        <dt class="sr-only">Company Name</dt>
+                                        <dd class="text-white text-sm">Microsoft Corp</dd>
+                                        <dt class="sr-only">Exchange</dt>
+                                        <dd class="text-white text-sm">NASDAQ</dd>
                                     </dl>
                                 </hgroup>
 
-                                <!-- Действия с акцией -->
-                                <div class="flex" role="group" aria-label="Stock actions">
-                                    <button type="button"
-                                            class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue group"
-                                            aria-label="View Stock Details">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="transition-colors">
-                                            <path d="M12.0001 9.005C13.061 9.005 14.0784 9.42643 14.8285 10.1766C15.5787 10.9267 16.0001 11.9441 16.0001 13.005C16.0001 14.0659 15.5787 15.0833 14.8285 15.8334C14.0784 16.5836 13.061 17.005 12.0001 17.005C10.9392 17.005 9.9218 16.5836 9.17166 15.8334C8.42151 15.0833 8.00008 14.0659 8.00008 13.005C8.00008 11.9441 8.42151 10.9267 9.17166 10.1766C9.9218 9.42643 10.9392 9.005 12.0001 9.005ZM12.0001 5.5C16.6131 5.5 20.5961 8.65 21.7011 13.064C21.7495 13.2569 21.7193 13.4612 21.6171 13.6319C21.5148 13.8025 21.349 13.9256 21.1561 13.974C20.9631 14.0224 20.7589 13.9922 20.5882 13.89C20.4176 13.7878 20.2945 13.6219 20.2461 13.429C19.7838 11.5918 18.7213 9.9616 17.2271 8.79704C15.7328 7.63248 13.8925 7.00028 11.998 7.00074C10.1036 7.0012 8.26353 7.6343 6.76986 8.79958C5.27619 9.96486 4.21444 11.5956 3.75308 13.433C3.70127 13.6219 3.5776 13.7831 3.4085 13.882C3.23941 13.9809 3.03832 14.0098 2.84824 13.9623C2.65816 13.9149 2.49418 13.795 2.39137 13.6283C2.28856 13.4615 2.25508 13.2611 2.29808 13.07C2.84036 10.9075 4.08954 8.98806 5.84729 7.61657C7.60504 6.24509 9.77059 5.50013 12.0001 5.5Z" class="fill-[#999999] group-hover:fill-neon-blue"/>
-                                        </svg>
+                                <div class="flex gap-2" role="group" aria-label="Stock actions">
+                                    <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="View Stock Details">
+                                        <img src="assets/images/visibleWhite.svg" alt=""/>
                                     </button>
-                                    <button type="button"
-                                            class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue group ml-2"
-                                            aria-label="Enable notifications for MSFT">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="transition-colors">
-                                            <path d="M6.02803 12.6687H9.97203C9.89322 13.1347 9.65194 13.5577 9.29096 13.8627C8.92999 14.1678 8.47264 14.3352 8.00003 14.3352C7.52742 14.3352 7.07007 14.1678 6.7091 13.8627C6.34812 13.5577 6.10683 13.1347 6.02803 12.6687ZM8.00003 1.33533C9.32611 1.33533 10.5979 1.86211 11.5356 2.79979C12.4732 3.73748 13 5.00924 13 6.33533V9.00199L13.9454 11.1087C13.9883 11.205 14.0066 11.3106 13.9984 11.4158C13.9902 11.5209 13.9559 11.6224 13.8985 11.711C13.8412 11.7995 13.7626 11.8723 13.67 11.9228C13.5773 11.9733 13.4735 11.9998 13.368 12H2.6347C2.52905 12 2.42509 11.9735 2.33227 11.9231C2.23946 11.8726 2.16074 11.7997 2.10329 11.7111C2.04584 11.6224 2.01149 11.5208 2.00335 11.4155C1.99521 11.3101 2.01355 11.2044 2.0567 11.108L3.00003 9.00133V6.32666L3.00336 6.15999C3.04897 4.86523 3.59536 3.63871 4.52743 2.73885C4.4595 1.839 6.70446 1.33539 8.00003 1.33533Z" class="fill-white group-hover:fill-neon-blue"/>
-                                        </svg>
+                                    <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="Enable notifications for MSFT">
+                                        <img src="assets/images/notifications.svg" alt="Notifications"/>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Текущая цена и изменения -->
                             <div class="flex items-start gap-2 mb-3" aria-label="Current stock price and changes">
-                                <data value="406.32" class="w-[137px] h-[44px] text-[40px] leading-[44px] font-golos font-semibold text-green font-feature-['tnum','lnum'] flex-none order-0">
+                                <data value="406.32"
+                                      class="w-[137px] h-[44px] text-[40px] leading-[44px] font-golos font-semibold text-green font-feature-['tnum','lnum'] flex-none order-0">
                                     406.32
                                 </data>
                                 <div class="flex flex-col items-start text-sm">
@@ -246,37 +240,34 @@
                                     <data value="+0.26" class="text-green">+0.26%</data>
                                 </div>
                             </div>
-
-                            <!-- После-торговая информация -->
                             <div class="text-sm text-gray-400">
                                 <span>After hours:</span>
-                                <data value="406.83" class="text-red mr-2">406.83 -0.27 -0.07% </data>
+                                <data value="406.83" class="text-red mr-2">406.83 -0.27 -0.07%</data>
                                 <time datetime="2024-04-26T19:59-04:00">| 19:59 04/26 EDT</time>
                             </div>
                         </div>
-
                         <div class="flex gap-8" role="complementary" aria-label="Stock details">
                             <article aria-labelledby="trading-data" class="w-[268px]">
                                 <h2 id="trading-data" class="sr-only">Trading Data</h2>
                                 <dl class="flex flex-col flex-1 gap-[2px]">
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Open</dt>
+                                        <dt class="text-grey-text-color text-sm">Open</dt>
                                         <dd class="text-red text-sm font-medium">401.23</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Low</dt>
+                                        <dt class="text-grey-text-color text-sm">Low</dt>
                                         <dd class="text-red text-sm font-medium">400.10</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">High</dt>
+                                        <dt class="text-grey-text-color text-sm">High</dt>
                                         <dd class="text-green text-sm font-medium">408.36</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">52 Wk High</dt>
+                                        <dt class="text-grey-text-color text-sm">52 Wk High</dt>
                                         <dd class="text-white text-sm font-medium">430.82</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">52 Wk Low</dt>
+                                        <dt class="text-grey-text-color text-sm">52 Wk Low</dt>
                                         <dd class="text-white text-sm font-medium">273.13</dd>
                                     </div>
                                 </dl>
@@ -286,26 +277,29 @@
                                 <h2 id="company-data" class="sr-only">Company Data</h2>
                                 <dl class="flex flex-col flex-1 gap-[2px]">
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Avg Vol (3M)</dt>
+                                        <dt class="text-grey-text-color text-sm">Avg Vol (3M)</dt>
                                         <dd class="text-white text-sm font-medium">21.73M</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Shares Outstanding</dt>
+                                        <dt class="text-grey-text-color text-sm">Shares Outstanding</dt>
                                         <dd class="text-white text-sm font-medium">7.43B</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Mkt Cap</dt>
+                                        <dt class="text-grey-text-color text-sm">Mkt Cap</dt>
                                         <dd class="text-white text-sm font-medium">3.02T</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">Div Yield</dt>
+                                        <dt class="text-grey-text-color text-sm">Div Yield</dt>
                                         <dd class="text-white text-sm font-medium">0.74%</dd>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <dt class="text-gray-400 text-sm">View all</dt>
+                                        <dt class="text-white text-sm">View all</dt>
                                         <dd>
-                                            <a href="#" class="text-neon-blue text-sm font-medium cursor-pointer hover:text-blue-300 transition-colors" aria-label="View all company data">
-                                                →
+                                            <a href="#"
+                                               class="text-neon-blue text-sm font-medium cursor-pointer hover:text-blue-300 transition-colors"
+                                               aria-label="View all company data">
+                                                <img src="assets/images/arrow.svg"
+                                                     alt="Arrow icon" aria-hidden="true"/>
                                             </a>
                                         </dd>
                                     </div>
@@ -315,115 +309,153 @@
                     </article>
 
                     <div aria-labelledby="chart-heading">
-                        <div id="tradingview_chart" style="height: 610px;"></div>
+                        <h2 id="chart-heading" class="sr-only">MSFT Stock Chart</h2>
+                        <div id="tradingview_chart" style="height: 710px;" aria-label="Interactive stock chart for Microsoft Corp" role="img"></div>
                     </div>
                 </section>
-
                 <aside class="w-[350px] pt-2" aria-labelledby="trade-heading">
-                    <h2 id="trade-heading" class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[8px] border-gray-600 text-base font-semibold text-white">Trade</h2>
-                        <div class="flex mb-3" role="tablist">
-                            <button class="tab active bg-active-tab border-b-2 border-green w-[100%] py-3 text-green"
-                                    role="tab"
-                                    aria-selected="true"
-                                    aria-controls="buy-panel"
-                                    id="buy-tab">
-                                Buy
-                            </button>
-                            <button class="tab border-b border-grey-text-color w-[100%] py-3 text-grey-text-color"
-                                    role="tab"
-                                    aria-selected="false"
-                                    aria-controls="sell-panel"
-                                    id="sell-tab">
-                                Sell
-                            </button>
-                        </div>
+                    <div class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[4px] border-gray-600 text-base font-semibold text-white flex items-center justify-between">
+                        <h2 id="trade-heading" class="">Trade</h2>
+                        <img src="assets/images/lines.svg" alt="Options menu" class="w-[16px] h-[16px]">
+                    </div>
+                    <div class="flex mb-3" role="tablist" aria-label="Trade options">
+                        <button class="tab active bg-active-tab border-b-2 border-green w-[100%] py-3 text-green"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="buy-panel"
+                                id="buy-tab"
+                                aria-label="Buy tab">
+                            Buy
+                        </button>
+                        <button class="tab border-b border-grey-text-color w-[100%] py-3 text-grey-text-color hover:bg-active-neon-blue opacity-50 hover:border-active-neon-blue transition-all duration-300"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="sell-panel"
+                                id="sell-tab"
+                                aria-label="Sell tab">
+                            Sell
+                        </button>
+                    </div>
 
-                    <article id="buy-panel" role="tabpanel" aria-labelledby="trade-heading">
+                    <article id="buy-panel" role="tabpanel" aria-labelledby="buy-tab">
                         <form class="px-6" aria-label="Stock purchase form">
-                            <fieldset class="flex flex-col gap-4">
+                            <fieldset
+                                    class="flex flex-col gap-4 mb-3 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-[-25px] after:w-[350px] after:h-[1px] after:bg-[repeating-linear-gradient(to_right,#1F1F1F_0,#1F1F1F_6px,transparent_6px,transparent_10px)]">
                                 <legend class="sr-only">Order Configuration</legend>
                                 <div>
-                                    <label for="countries" class="block text-sm font-medium text-white">Order Type</label>
-                                    <select id="countries" class="bg-dark-panel border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                        <option selected>Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
+                                    <label for="types" class="block text-sm font-medium text-grey-text-color">Order
+                                        Type</label>
+                                    <select id="types" class="bg-inputColor border border-gray-600 text-white text-sm rounded-lg  hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
+         dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue block w-full p-2.5">
+                                        <option selected>Market Price</option>
+                                        <option value="BP">Bid Price</option>
+                                        <option value="OP">Offer Price</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label for="quantity" class="block text-sm font-medium text-white">Quantity Shares</label>
-                                    <input type="number" id="quantity" aria-describedby="helper-text-explanation" class="bg-dark-panel border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="90210" required />
-                                    <div class="flex gap-2 mt-2" role="group" aria-label="Preset quantities">
-                                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">10</button>
-                                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">50</button>
-                                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">100</button>
-                                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">500</button>
+                                    <label for="quantity" class="block text-sm text-grey-text-color mb-1">Quantity <span
+                                            class="ml-1 text-neon-blue text-xs font-regular outline outline-1 outline-active-neon-blue px-1 rounded-[8px] transition-colors">Shares</span></label>
+                                    <input type="number" id="quantity" aria-describedby="helper-text-explanation"
+                                           class="bg-inputColor border border-gray-600 text-white text-sm rounded-lg hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
+                                                    dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue block w-full p-[10px] mb-2"
+                                           placeholder="100" required/>
+                                    <div class="flex gap-2" role="group" aria-label="Preset quantities">
+                                        <button type="button"
+                                                class="text-white bg-dark-panel border border-gray-600 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-700 font-medium rounded-full text-sm px-5 pt-[5px] pb-[5px]"
+                                                aria-label="Set quantity to 10">
+                                            10
+                                        </button>
+                                        <button type="button"
+                                                class="text-white bg-dark-panel border border-gray-600 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-700 font-medium rounded-full text-sm px-5 pt-[5px] pb-[5px]"
+                                                aria-label="Set quantity to 50">
+                                            50
+                                        </button>
+                                        <button type="button"
+                                                class="text-white bg-dark-panel border border-gray-600 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-700 font-medium rounded-full text-sm px-5 pt-[5px] pb-[5px]"
+                                                aria-label="Set quantity to 100">
+                                            100
+                                        </button>
+                                        <button type="button"
+                                                class="text-white bg-dark-panel border border-gray-600 focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-gray-700 font-medium rounded-full text-sm px-5 pt-[5px] pb-[5px]"
+                                                aria-label="Set quantity to 500">
+                                            500
+                                        </button>
+                                        <button type="button" aria-label="More quantity options">
+                                            <img class="w-[16px] h-[16px]" src="assets/images/svg8.svg"
+                                                 alt="More options"/>
+                                        </button>
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="time" class="block text-sm font-medium text-white">Time-in-Force</label>
-                                    <select id="time" class="bg-dark-panel border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <label for="time" class="block text-sm font-medium text-grey-text-color">Time-in-Force</label>
+                                    <select id="time" class="bg-inputColor border border-gray-600 text-white text-sm rounded-lg  hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
+         dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue block w-full p-2.5">
                                         <option selected>Day</option>
-                                        <option value="CA">Week</option>
-                                        <option value="FR">Month</option>
-                                        <option value="DE">Year</option>
+                                        <option value="Week">Week</option>
+                                        <option value="Month">Month</option>
+                                        <option value="Year">Year</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="flex items-center cursor-pointer">
-                                        <div class="relative">
-                                            <input type="checkbox" class="sr-only peer" />
-                                            <div class="block bg-grey-text-color w-14 h-8 rounded-full peer-checked:bg-neon-blue"></div>
-                                            <div class="dot absolute left-1 top-1 bg-dark-bg w-6 h-6 rounded-full transition"></div>
-                                        </div>
-                                        <div class="ml-3 text-gray-700 font-medium">
+                                    <div class="flex items-center gap-2 mb-[10px]">
+                                        <label for="stop-price-toggle" class="flex items-center cursor-pointer">
+                                            <div class="relative">
+                                                <input type="checkbox" id="stop-price-toggle" class="sr-only peer" aria-labelledby="stop-price-label"/>
+                                                <div class="block bg-grey-text-color w-[36px] h-[20px] rounded-full peer-checked:bg-neon-blue"></div>
+                                                <div class="dot absolute left-1 top-1 bg-dark-bg w-[12px] h-[12px] rounded-full transition"></div>
+                                            </div>
+                                        </label>
+                                        <span id="stop-price-label" class="text-white font-medium text-sm">
                                             Stop Price
-                                        </div>
-                                    </label>
-                                    <div>
-                                        <input type="number" id="price" aria-describedby="helper-text-explanation" class="bg-dark-panel border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="$ 400.00" required />
-                                        <p id="stop-loss-warning" class="text-red-500 text-xs">Est. Loss: 12,057.36</p>
+                                        </span>
                                     </div>
+                                    <div class="relative">
+                                        <label for="price" class="sr-only">Stop Price Value</label>
+                                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-grey-text-color" aria-hidden="true">$</span>
+                                        <input type="number" id="price" min="400" step="0.01" aria-describedby="stop-loss-warning" class="bg-dark-panel border border-gray-600 text-white text-sm rounded-lg hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
+         dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue block w-full p-2.5 pl-8 mb-[6px]" placeholder="400.00" required/>
+                                    </div>
+                                    <p id="stop-loss-warning" class="text-grey-text-color text-sm">Est. Loss: <span
+                                            class="text-red text-sm">12,057.36</span></p>
                                 </div>
                             </fieldset>
 
                             <article class="summary text-sm text-gray-400" aria-labelledby="order-summary">
                                 <h3 id="order-summary" class="sr-only">Order Summary</h3>
-                                <p>Buying Power: <data value="122912.50">$122,912.50</data></p>
-                                <p>Transaction Fees: <data value="4.00">$4.00</data></p>
-                                <p>Estimated Total: <data value="40000">$40,000</data></p>
+                                <dl class="flex flex-col flex-1 gap-[5px] mb-[15px]">
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-grey-text-color text-sm">Buying Power:</dt>
+                                        <dd class="text-white text-sm">$122,912.50</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-grey-text-color text-sm">Transaction Fees:</dt>
+                                        <dd class="text-white text-sm">$4.00</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-grey-text-color text-sm ">Estimated Total:</dt>
+                                        <dd class="text-white text-sm">$40,000</dd>
+                                    </div>
+                                </dl>
                             </article>
 
-                        <div class="flex flex-col">
-                            <button type="button" class="text-white bg-green mb-2">Buy MSFT</button>
-                            <button type="button" class="text-white flex">
-                                Disclaimer <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
-                            </svg>
-                            </button>
-                        </div>
+                            <div class="flex flex-col">
+                                <button type="button" class="text-white bg-green mb-4 py-2 rounded-[8px] hover:bg-active-neon-blue transition-colors" aria-label="Buy Microsoft stock">
+                                    Buy MSFT
+                                </button>
+                                <button type="button" class="flex items-center justify-center gap-1 text-white text-xs hover:text-neon-blue transition-colors" aria-label="View disclaimer">
+                                    Disclaimer
+                                    <img class="w-[16px] h-[16px]" src="assets/images/arrow.svg" alt="Arrow icon" aria-hidden="true"/>
+                                </button>
+                            </div>
                         </form>
                     </article>
-
-                    <article class="time-sales mt-6 text-xs text-gray-400" aria-labelledby="time-sales-heading">
-                        <div class="bg-dark-panel px-5 pb-4 text-white flex items-center justify-between">
+                    <article class="time-sales mt-6 text-xs text-gray-400 overflow-hidden"
+                             aria-labelledby="time-sales-heading">
+                        <div class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[4px] border-gray-600 text-base font-semibold text-white flex items-center justify-between">
                             <h3 id="time-sales-heading" class="">Time & Sales</h3>
-                            <span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
-</svg>
-                            </span>
+                            <img src="assets/images/lines.svg" alt="Options menu" class="w-[16px] h-[16px]">
                         </div>
-                        <div class="mt-2 space-y-1" role="log" aria-label="Recent trades" aria-live="polite">
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="25">25</data></div>
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="24">24</data></div>
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="25">25</data></div>
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="24">24</data></div>
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="25">25</data></div>
-                            <div><time datetime="16:59:32">16:59:32</time> — <data value="420.56">420.56</data> × <data value="24">24</data></div>
-                        </div>
+                        <div id="content" class="flex flex-col gap-[13px] h-[174px] overflow-y-auto custom-scrollbar pl-[26px] pr-[19px]"></div>
                     </article>
                 </aside>
             </div>
@@ -435,7 +467,7 @@
     new TradingView.widget({
         container_id: "tradingview_chart",
         width: "100%",
-        height: 610,
+        height: 734,
         symbol: "NASDAQ:MSFT",
         interval: "60",
         timezone: "Etc/UTC",
