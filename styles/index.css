@@ -37,9 +37,12 @@ body {
     border: 0;
 }
 
-input:focus, select:focus, button:focus, a:focus {
-    outline: 2px solid #00BDDD;
-    outline-offset: 2px;
+/*input:focus, select:focus, button:focus, a:focus {*/
+/*    outline: 2px solid #00BDDD;*/
+/*    outline-offset: 2px;*/
+/*}*/
+input, select {
+    outline: none;
 }
 
 .peer:checked ~ .dot {
