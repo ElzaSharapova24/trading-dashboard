@@ -1,8 +1,19 @@
+/* 
+==============================================
+TAILWIND CSS IMPORTS
+Base Tailwind CSS configuration imports
+==============================================
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* 
+==============================================
+FONT DEFINITIONS
+Custom font imports for Golos Text in different weights
+==============================================
+*/
 @font-face {
     font-family: 'Golos Text';
     src: url('../assets/fonts/GolosText-Regular.woff2') format('woff2');
@@ -21,10 +32,17 @@
     font-weight: 600;
 }
 
+/* 
+==============================================
+BASE STYLES
+Global styles for basic elements
+==============================================
+*/
 body {
     font-family: 'Golos Text', sans-serif;
 }
 
+/* Screen reader only class for accessibility */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -37,18 +55,42 @@ body {
     border: 0;
 }
 
-/*input:focus, select:focus, button:focus, a:focus {*/
-/*    outline: 2px solid #00BDDD;*/
-/*    outline-offset: 2px;*/
-/*}*/
+/* 
+==============================================
+FORM ELEMENTS
+Styles for form inputs and controls
+==============================================
+*/
+
 input, select {
     outline: none;
 }
 
-.peer:checked ~ .dot {
-    transform: translateX(100%);
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding-right: 2.5rem;
+    background: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.75rem center;
+    background-color: #1c1c1c;
+    border: 1px solid #555;
+    border-radius: 6px;
+    color: white;
 }
 
+/* Toggle switch animation for the dot */
+.peer:checked ~ .dot {
+    transform: translateX(100%);
+    left: 8px;
+}
+
+/* 
+==============================================
+CUSTOM SCROLLBAR
+Styling for custom scrollbars in the application
+==============================================
+*/
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }

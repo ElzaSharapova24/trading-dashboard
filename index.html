@@ -5,6 +5,7 @@
     <link href="styles/index.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="scripts/index.js"></script>
+    <!-- Tailwind CSS Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -35,30 +36,38 @@
             }
         }
     </script>
-    <title>MSFT Stock Trading Dashboard - Microsoft Corp</title>
+    <title>Stock Trading Dashboard</title>
 </head>
 <body class="max-w-[1440px] mx-auto bg-dark-bg font-golos">
 <div class="flex min-h-screen">
+    <!-- 
+    ==============================================
+    SIDEBAR NAVIGATION
+    ==============================================
+    -->
     <aside class="w-[60px] bg-dark-bg border-r border-gray-800 flex flex-col ">
+        <!-- Logo section -->
         <div class="mb-[82px] pl-3 pt-4">
             <a href="#" class="block" aria-label="Home">
                 <img src="assets/images/Logo.svg" alt="Logo" class=""/>
             </a>
         </div>
+        <!-- Main navigation menu -->
         <nav class="flex flex-col h-full" role="navigation" aria-label="Main navigation">
+            <!-- Primary navigation items -->
             <ul class="flex flex-col items-center gap-[25px] flex-1 p-[15px]">
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px] mb-[15px]"
-                            aria-label="Dashboard" aria-current="page">
-                        <img src="assets/images/svg1.svg"
-                             alt="Dashboard icon"/>
+                            aria-label="Hidden" aria-current="page">
+                        <img src="assets/images/icon-eye-hidden.svg"
+                             alt="Hidden icon"/>
                     </button>
                 </li>
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
-                            aria-label="Reports">
-                        <img src="assets/images/svg2.svg"
-                             alt="Reports icon"/>
+                            aria-label="Globe">
+                        <img src="assets/images/icon-globe.svg"
+                             alt="Globe icon"/>
                     </button>
                 </li>
                 <li>
@@ -66,64 +75,75 @@
                after:content-[''] after:absolute after:bottom-[-17px] after:left-[112%] after:w-[1px] after:h-[80px]
                after:bg-[linear-gradient(to_bottom,transparent,theme(colors.active-blue/80),theme(colors.active-blue),theme(colors.active-blue/80),transparent)]
                after:opacity-100 after:pointer-events-none"
-                            aria-label="Analytics"
+                            aria-label="Trading"
                             aria-current="page">
-                        <img src="assets/images/svg10.svg"
-                             alt="Analytics icon"
+                        <img src="assets/images/icon-trading.svg"
+                             alt="Trading icon"
                              class="max-w-none"/>
                     </button>
                 </li>
                 <li>
                     <button class="tab rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
-                            aria-label="Portfolio">
-                        <img src="assets/images/svg3.svg"
-                             alt="Portfolio icon"/>
+                            aria-label="Wallet">
+                        <img src="assets/images/icon-wallet.svg"
+                             alt="Wallet icon"/>
                     </button>
                 </li>
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
-                            aria-label="Settings">
-                        <img src="assets/images/svg4.svg"
-                             alt="Settings icon"/>
+                            aria-label="People">
+                        <img src="assets/images/icon-people.svg"
+                             alt="People icon"/>
                     </button>
                 </li>
             </ul>
+            <!-- Secondary navigation items (bottom) -->
             <ul class="flex flex-col items-center gap-8 mb-[21px] mt-auto">
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
-                            aria-label="Help">
-                        <img src="assets/images/svg5.svg"
-                             alt="Help icon"/>
+                            aria-label="Settings">
+                        <img src="assets/images/icon-settings.svg"
+                             alt="Settings icon"/>
                     </button>
                 </li>
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
                             aria-label="Notifications">
-                        <img src="assets/images/svg6.svg"
+                        <img src="assets/images/icon-mail.svg"
                              alt="Notifications icon"/>
                     </button>
                 </li>
                 <li>
                     <button class="rounded-full transition-colors hover:outline hover:outline-1 hover:outline-active-blue hover:outline-offset-[10px]"
-                            aria-label="Profile">
-                        <img src="assets/images/svg7.svg"
-                             alt="Profile icon"/>
+                            aria-label="Question">
+                        <img src="assets/images/icon-question.svg"
+                             alt="Question icon"/>
                     </button>
                 </li>
             </ul>
         </nav>
     </aside>
+    <!-- 
+    ==============================================
+    MAIN CONTENT AREA
+    ==============================================
+    -->
     <div class="flex-1 flex flex-col mx-auto">
+        <!-- 
+        ==============================================
+        HEADER SECTION
+        ==============================================
+        -->
         <header class="bg-dark-bg border-b border-gray-800 flex justify-between items-center pt-4 pb-[13px] px-5"
                 role="banner">
             <div class="flex items-center gap-2">
                 <button class="hover:bg-grey-text-color p-2 rounded-[24px] transition-colors" aria-label="Toggle menu">
-                    <img src="assets/images/Vector.svg" alt="Menu toggle icon"/>
+                    <img src="assets/images/menu-icon.svg" alt="Menu toggle icon" aria-label="Toggle menu"/>
                 </button>
-                <img src="assets/images/avatar.svg" alt="User avatar" class="w-6 h-6 rounded-full"/>
+                <img src="assets/images/avatar.svg" alt="User avatar" class="w-6 h-6 rounded-full" aria-label="User avatar"/>
                 <div class="mr-2">
-                    <p class="text-white font-medium text-sm leading-6">James Raymond</p>
-                    <p class="text-grey-text-color font-regular text-xs leading-5">Account: <span>4453728992</span></p>
+                    <p class="text-white font-medium text-sm leading-6" aria-label="User name">James Raymond</p>
+                    <p class="text-grey-text-color font-regular text-xs leading-5" aria-label="User account number">Account: <span>4453728992</span></p>
                 </div>
                 <span class="text-white mr-1">|</span>
                 <button class="hover:bg-grey-text-color p-1 rounded-[16px] transition-colors mr-4" aria-label="Notifications">
@@ -132,12 +152,12 @@
                 </button>
                 <div class="flex gap-8">
                     <div>
-                        <p class="text-grey-text-color font-regular text-xs leading-5">Portfolio Balance</p>
-                        <p class="text-white font-medium text-sm leading-5">$623,098.17</p>
+                        <p class="text-grey-text-color font-regular text-xs leading-5" aria-label="User account balance">Portfolio Balance</p>
+                        <p class="text-white font-medium text-sm leading-5" aria-label="Balance">$623,098.17</p>
                     </div>
                     <div>
-                        <p class="text-grey-text-color font-regular text-xs leading-5">Available Funds</p>
-                        <p class="text-white font-medium text-sm leading-5">$122,912.50</p>
+                        <p class="text-grey-text-color font-regular text-xs leading-5" aria-label="Available Funds">Available Funds</p>
+                        <p class="text-white font-medium text-sm leading-5" aria-label="Funds">$122,912.50</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +165,7 @@
                 <label for="default-search" class="mb-2 text-sm font-medium sr-only">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <img src="assets/images/searchIcon.svg"
+                        <img src="assets/images/search-icon.svg"
                              alt="Search icon" aria-hidden="true"/>
                     </div>
                     <input type="search"
@@ -155,323 +175,343 @@
                                  dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue"
                            placeholder="Search"
                            required
+                           aria-label="Search form"
                     />
-
                 </div>
             </form>
         </header>
-        <main class="flex-1" role="main">
-            <div class="flex">
-                <section class="max-xl:w-[710px] w-[1019px] pt-2 px-2" aria-labelledby="stock-heading">
-                    <nav class="py-5 pl-[48px] bg-dark-panel rounded-t-[4px]" role="navigation"
-                         aria-label="Stock data navigation">
-                        <ul class="flex text-sm gap-[54px] max-xl:gap-[17px]">
-                            <li class="relative">
-                                <a href="#chart"
-                                   class="relative text-neon-blue outline outline-1 outline-active-neon-blue outline-offset-[7px] rounded-[8px] transition-colors
-                                   after:content-[''] after:absolute after:bottom-[-22px] after:left-[-12px] after:w-[62px] after:h-[2px]
-                                   after:bg-[linear-gradient(to_right,transparent,theme(colors.active-blue/60),theme(colors.active-blue),theme(colors.active-blue/60),transparent)]
-                                   after:opacity-100 after:pointer-events-none"
-                                   role="menuitem">
-                                    Chart
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#options" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Options</a>
-                            </li>
-                            <li>
-                                <a href="#news" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">News</a>
-                            </li>
-                            <li>
-                                <a href="#financials" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Financials</a>
-                            </li>
-                            <li>
-                                <a href="#analysts" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Analysts</a>
-                            </li>
-                            <li>
-                                <a href="#risk-analysis" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Risk Analysis</a>
-                            </li>
-                            <li>
-                                <a href="#releases" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Releases</a>
-                            </li>
-                            <li>
-                                <a href="#notes" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Notes</a>
-                            </li>
-                            <li>
-                                <a href="#profile" class="text-gray-400 hover:text-active-blue transition-colors"
-                                   role="menuitem">Profile</a>
-                            </li>
-                        </ul>
-                    </nav>
+        <!-- 
+        ==============================================
+        MAIN CONTENT SECTION
+        ==============================================
+        -->
+        <main class="flex flex-1" role="main">
+            <!--
+            ==============================================
+            STOCK INFORMATION AND CHART SECTION
+            ==============================================
+            -->
+            <section class="max-xl:w-[710px] w-[1019px] pt-2 px-2" aria-labelledby="stock-heading">
+                <nav class="py-5 pl-[48px] bg-dark-panel rounded-t-[4px]" role="navigation"
+                     aria-label="Stock data navigation">
+                    <ul class="flex text-sm gap-[54px] max-xl:gap-[17px]">
+                        <li class="relative">
+                            <a href="#chart"
+                               aria-label="Stock chart"
+                               class="relative text-neon-blue outline outline-1 outline-active-neon-blue outline-offset-[7px] rounded-[8px] transition-colors
+                               after:content-[''] after:absolute after:bottom-[-22px] after:left-[-12px] after:w-[62px] after:h-[2px]
+                               after:bg-[linear-gradient(to_right,transparent,theme(colors.active-blue/60),theme(colors.active-blue),theme(colors.active-blue/60),transparent)]
+                               after:opacity-100 after:pointer-events-none"
+                               role="menuitem">
+                                Chart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#options" aria-label="Stock options" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Options</a>
+                        </li>
+                        <li>
+                            <a href="#news" aria-label="Stock news" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">News</a>
+                        </li>
+                        <li>
+                            <a href="#financials" aria-label="Stock financials" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Financials</a>
+                        </li>
+                        <li>
+                            <a href="#analysts" aria-label="Stock analysts" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Analysts</a>
+                        </li>
+                        <li>
+                            <a href="#risk-analysis" aria-label="Stock risk-analysis" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Risk Analysis</a>
+                        </li>
+                        <li>
+                            <a href="#releases" aria-label="Stock releases" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Releases</a>
+                        </li>
+                        <li>
+                            <a href="#notes" aria-label="Stock notes" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Notes</a>
+                        </li>
+                        <li>
+                            <a href="#profile" aria-label="Stock profile" class="text-gray-400 hover:text-active-blue transition-colors"
+                               role="menuitem">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
 
-                    <article class="flex gap-10 pt-[7px] pl-[25px]" aria-labelledby="stock-heading">
-                        <div class="flex flex-col">
-                            <div class="flex gap-3">
-                                <hgroup class="flex items-center mb-2.5 gap-2 max-xl:flex-col max-xl:items-start">
-                                    <h1 id="stock-heading" class="text-xl font-semibold text-white">MSFT</h1>
-                                    <dl class="flex items-center gap-1 text-sm max-xl:text-xs max-xl:flex-col max-xl:items-start">
-                                            <dd class="text-white">Microsoft Corp</dd>
-                                            <dd class="text-white">NASDAQ</dd>
-                                    </dl>
-                                </hgroup>
+                <article class="flex gap-10 pt-[7px] pl-[25px]" aria-labelledby="stock-heading">
+                    <div class="flex flex-col">
+                        <div class="flex gap-3">
+                            <hgroup class="flex items-center mb-2.5 gap-2 max-xl:flex-col max-xl:items-start">
+                                <h1 id="stock-heading" class="text-xl font-semibold text-white">MSFT</h1>
+                                <dl class="flex items-center gap-1 text-sm max-xl:text-xs max-xl:flex-col max-xl:items-start">
+                                        <dd class="text-white">Microsoft Corp</dd>
+                                        <dd class="text-white">NASDAQ</dd>
+                                </dl>
+                            </hgroup>
 
-                                <div class="flex gap-2" role="group" aria-label="Stock actions">
-                                    <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="View Stock Details">
-                                        <img src="assets/images/visibleWhite.svg" alt=""/>
-                                    </button>
-                                    <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="Enable notifications for MSFT">
-                                        <img src="assets/images/notifications.svg" alt="Notifications"/>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-2 mb-3" aria-label="Current stock price and changes">
-                                <data value="406.32"
-                                      class="w-[137px] h-[44px] text-[40px] leading-[44px] font-golos font-semibold text-green font-feature-['tnum','lnum'] flex-none order-0">
-                                    406.32
-                                </data>
-                                <div class="flex flex-col items-start text-sm">
-                                    <data value="+2.24" class="text-green">+2.24</data>
-                                    <data value="+0.26" class="text-green">+0.26%</data>
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-400 max-xl:text-xs">
-                                <span>After hours:</span>
-                                <data value="406.83" class="text-red mr-2">406.83 -0.27 -0.07%</data>
-                                <time datetime="2024-04-26T19:59-04:00">| 19:59 04/26 EDT</time>
+                            <div class="flex gap-2" role="group" aria-label="Stock actions">
+                                <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="View Stock Details">
+                                    <img src="assets/images/visible-eye-white.svg" alt=""/>
+                                </button>
+                                <button type="button" class="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border border-gray-600 hover:border-neon-blue" aria-label="Enable notifications for MSFT">
+                                    <img src="assets/images/notifications.svg" alt="Notifications"/>
+                                </button>
                             </div>
                         </div>
-                        <div class="flex gap-8" role="complementary" aria-label="Stock details">
-                            <article aria-labelledby="trading-data" class="w-[268px] max-xl:w-full">
-                                <h2 id="trading-data" class="sr-only">Trading Data</h2>
-                                <dl class="flex flex-col gap-[2px] text-sm">
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Open</dt>
-                                        <dd class="text-red font-medium">401.23</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Low</dt>
-                                        <dd class="text-red font-medium">400.10</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">High</dt>
-                                        <dd class="text-green font-medium">408.36</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">52 Wk High</dt>
-                                        <dd class="text-white font-medium">430.82</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">52 Wk Low</dt>
-                                        <dd class="text-white font-medium">273.13</dd>
-                                    </div>
-                                </dl>
-                            </article>
 
-                            <article aria-labelledby="company-data" class="w-[266px] max-xl:w-full">
-                                <h2 id="company-data" class="sr-only">Company Data</h2>
-                                <dl class="flex flex-col flex-1 gap-[2px] text-sm">
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Avg Vol (3M)</dt>
-                                        <dd class="text-white font-medium">21.73M</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Shares Outstanding</dt>
-                                        <dd class="text-white font-medium">7.43B</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Mkt Cap</dt>
-                                        <dd class="text-white font-medium">3.02T</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color">Div Yield</dt>
-                                        <dd class="text-white font-medium">0.74%</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-white">View all</dt>
-                                        <dd>
-                                            <a href="#"
-                                               class="text-neon-blue font-medium cursor-pointer hover:text-blue-300 transition-colors"
-                                               aria-label="View all company data">
-                                                <img src="assets/images/arrow.svg"
-                                                     alt="Arrow icon" aria-hidden="true"/>
-                                            </a>
-                                        </dd>
-                                    </div>
-                                </dl>
-                            </article>
+                        <div class="flex items-start gap-2 mb-3" aria-label="Current stock price and changes">
+                            <data value="406.32"
+                                  class="w-[137px] h-[44px] text-[40px] leading-[44px] font-golos font-semibold text-green font-feature-['tnum','lnum'] flex-none order-0">
+                                406.32
+                            </data>
+                            <div class="flex flex-col items-start text-sm">
+                                <data value="+2.24" class="text-green">+2.24</data>
+                                <data value="+0.26" class="text-green">+0.26%</data>
+                            </div>
                         </div>
-                    </article>
 
-                    <div aria-labelledby="chart-heading">
-                        <h2 id="chart-heading" class="sr-only">MSFT Stock Chart</h2>
-                        <div id="tradingview_chart" style="height: 710px;" aria-label="Interactive stock chart for Microsoft Corp" role="img"></div>
+                        <div class="text-sm text-gray-400 max-xl:text-xs">
+                            <span>After hours:</span>
+                            <data value="406.83" class="text-red mr-2">406.83 -0.27 -0.07%</data>
+                            <time datetime="2024-04-26T19:59-04:00">| 19:59 04/26 EDT</time>
+                        </div>
                     </div>
-                </section>
-                <aside class="w-[350px] pt-2" aria-labelledby="trade-heading">
+
+                    <div class="flex gap-8" role="complementary" aria-label="Stock details">
+                        <article aria-labelledby="trading-data" class="w-[268px] max-xl:w-full">
+                            <h2 id="trading-data" class="sr-only">Trading Data</h2>
+                            <dl class="flex flex-col gap-[2px] text-sm">
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Open</dt>
+                                    <dd class="text-red font-medium">401.23</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Low</dt>
+                                    <dd class="text-red font-medium">400.10</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">High</dt>
+                                    <dd class="text-green font-medium">408.36</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">52 Wk High</dt>
+                                    <dd class="text-white font-medium">430.82</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">52 Wk Low</dt>
+                                    <dd class="text-white font-medium">273.13</dd>
+                                </div>
+                            </dl>
+                        </article>
+
+                        <article aria-labelledby="company-data" class="w-[266px] max-xl:w-full">
+                            <h2 id="company-data" class="sr-only">Company Data</h2>
+                            <dl class="flex flex-col flex-1 gap-[2px] text-sm">
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Avg Vol (3M)</dt>
+                                    <dd class="text-white font-medium">21.73M</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Shares Outstanding</dt>
+                                    <dd class="text-white font-medium">7.43B</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Mkt Cap</dt>
+                                    <dd class="text-white font-medium">3.02T</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color">Div Yield</dt>
+                                    <dd class="text-white font-medium">0.74%</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-white">View all</dt>
+                                    <dd>
+                                        <a href="#"
+                                           class="text-neon-blue font-medium cursor-pointer hover:text-blue-300 transition-colors"
+                                           aria-label="View all company data">
+                                            <img src="assets/images/arrow.svg"
+                                                 alt="Arrow icon" aria-hidden="true"/>
+                                        </a>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </article>
+                    </div>
+                </article>
+
+                <article aria-labelledby="chart-heading">
+                    <h2 id="chart-heading" class="sr-only">MSFT Stock Chart</h2>
+                    <div id="tradingview_chart" style="height: 710px;" aria-label="Interactive stock chart for Microsoft Corp" role="img"></div>
+                </article>
+            </section>
+            <!--
+            ==============================================
+            TRADING PANEL SECTION
+            ==============================================
+            -->
+            <aside class="w-[350px] pt-2" aria-labelledby="trade-heading">
+                <div class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[4px] border-gray-600 text-base font-semibold text-white flex items-center justify-between">
+                    <h2 id="trade-heading" class="">Trade</h2>
+                    <img src="assets/images/lines.svg" alt="Options menu" class="w-[16px] h-[16px]">
+                </div>
+                <div class="flex mb-3" role="tablist" aria-label="Trade options">
+                    <button class="tab active bg-active-tab border-b-2 border-green w-[100%] py-3 text-green"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="buy-panel"
+                            id="buy-tab"
+                            aria-label="Buy tab">
+                        Buy
+                    </button>
+                    <button class="tab border-b border-grey-text-color w-[100%] py-3 text-grey-text-color hover:bg-active-neon-blue opacity-50 hover:border-active-neon-blue transition-all duration-300"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="sell-panel"
+                            id="sell-tab"
+                            aria-label="Sell tab">
+                        Sell
+                    </button>
+                </div>
+
+                <article id="buy-panel" role="tabpanel" aria-labelledby="buy-tab">
+                    <form class="px-6" aria-label="Stock purchase form">
+
+                        <fieldset
+                                class="flex flex-col gap-4 mb-3 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-[-25px] after:w-[350px] after:h-[1px] after:bg-[repeating-linear-gradient(to_right,#1F1F1F_0,#1F1F1F_6px,transparent_6px,transparent_10px)]">
+                            <legend class="sr-only">Order Configuration</legend>
+
+                            <div>
+                                <label for="types" class="block text-sm font-medium text-grey-text-color">Order
+                                    Type</label>
+                                <select id="types" class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg  hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue block w-full p-2.5">
+                                    <option selected>Market Price</option>
+                                    <option value="BP">Bid Price</option>
+                                    <option value="OP">Offer Price</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="quantity" class="block text-sm text-grey-text-color mb-1">
+                                    Quantity
+                                    <span class="ml-1 text-neon-blue text-xs font-regular outline outline-1 outline-active-neon-blue px-1 rounded-[8px] transition-colors">Shares</span>
+                                </label>
+
+                                <input type="number" id="quantity" aria-describedby="helper-text-explanation"
+                                       class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-[10px] mb-2"
+                                       placeholder="100" required/>
+
+                                <div class="flex gap-2" role="group" aria-label="Preset quantities">
+                                    <button type="button" class="preset-btn text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]">10</button>
+                                    <button type="button" class="preset-btn text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]">50</button>
+                                    <button type="button" class="preset-btn text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]">100</button>
+                                    <button type="button" class="preset-btn text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]">500</button>
+                                    <button type="button" aria-label="More quantity options">
+                                        <img class="w-[16px] h-[16px]" src="assets/images/icon-pensil.svg" alt="More options" aria-label="More quantity options"/>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-grey-text-color">Time-in-Force</label>
+                                <select id="time" class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg  hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-2.5">
+                                    <option selected>Day</option>
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center gap-2 mb-[10px]">
+                                    <label class="flex items-center cursor-pointer">
+                                        <div class="relative">
+                                            <input type="checkbox"
+                                                   class="sr-only peer focus-visible:outline-none"
+                                                   aria-describedby="stop-price-label"/>
+                                            <div class="block bg-grey-text-color w-[36px] h-[20px] rounded-full peer-checked:bg-neon-blue peer-focus-visible:ring-2 peer-focus-visible:ring-neon-blue peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-dark-bg transition-all"></div>
+                                            <div class="dot absolute left-1 top-1 bg-dark-bg w-[12px] h-[12px] rounded-full transition peer-focus-visible:ring-1 peer-focus-visible:ring-white"></div>
+                                        </div>
+                                    </label>
+                                    <span id="stop-price-label" class="text-white font-medium text-sm">
+                                        Stop Price
+                                    </span>
+                                </div>
+
+                                <div class="relative">
+                                    <label for="price" class="sr-only">Stop Price Value</label>
+                                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-grey-text-color" aria-hidden="true">$</span>
+                                    <input type="number" id="price" min="400" step="0.01" aria-describedby="Stop Price" class="bg-dark-panel border border-grey-text-color text-white text-sm rounded-lg hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-2.5 pl-8 mb-[6px]" placeholder="400.00" required/>
+                                </div>
+                                <p id="stop-loss-warning" class="text-grey-text-color text-sm">Est. Loss: <span
+                                        class="text-red text-sm">12,057.36</span></p>
+                            </div>
+                        </fieldset>
+
+                        <article class="summary text-sm text-gray-400" aria-labelledby="order-summary">
+                            <h3 id="order-summary" class="sr-only">Order Summary</h3>
+                            <dl class="flex flex-col flex-1 gap-[5px] mb-[15px]">
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color text-sm">Buying Power:</dt>
+                                    <dd class="text-white text-sm">$122,912.50</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color text-sm">Transaction Fees:</dt>
+                                    <dd class="text-white text-sm">$4.00</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-grey-text-color text-sm ">Estimated Total:</dt>
+                                    <dd class="text-white text-sm">$40,000</dd>
+                                </div>
+                            </dl>
+                        </article>
+
+                        <div class="flex flex-col">
+                            <button type="submit" class="text-white bg-green mb-4 py-2 rounded-[8px] hover:bg-active-neon-blue transition-colors" aria-label="Buy Microsoft stock">
+                                Buy MSFT
+                            </button>
+                            <a href="#" type="button" class="flex items-center justify-center gap-1 text-white text-xs hover:text-neon-blue transition-colors" aria-label="View disclaimer">
+                                Disclaimer
+                                <img class="w-[16px] h-[16px]" src="assets/images/arrow.svg" alt="Arrow icon" aria-hidden="true"/>
+                            </a>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="time-sales mt-6 text-xs text-gray-400 overflow-hidden"
+                         aria-labelledby="time-sales-heading">
                     <div class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[4px] border-gray-600 text-base font-semibold text-white flex items-center justify-between">
-                        <h2 id="trade-heading" class="">Trade</h2>
+                        <h3 id="time-sales-heading" aria-label="Time and sales">Time & Sales</h3>
                         <img src="assets/images/lines.svg" alt="Options menu" class="w-[16px] h-[16px]">
                     </div>
-                    <div class="flex mb-3" role="tablist" aria-label="Trade options">
-                        <button class="tab active bg-active-tab border-b-2 border-green w-[100%] py-3 text-green"
-                                role="tab"
-                                aria-selected="true"
-                                aria-controls="buy-panel"
-                                id="buy-tab"
-                                aria-label="Buy tab">
-                            Buy
-                        </button>
-                        <button class="tab border-b border-grey-text-color w-[100%] py-3 text-grey-text-color hover:bg-active-neon-blue opacity-50 hover:border-active-neon-blue transition-all duration-300"
-                                role="tab"
-                                aria-selected="false"
-                                aria-controls="sell-panel"
-                                id="sell-tab"
-                                aria-label="Sell tab">
-                            Sell
-                        </button>
-                    </div>
-
-                    <article id="buy-panel" role="tabpanel" aria-labelledby="buy-tab">
-                        <form class="px-6" aria-label="Stock purchase form">
-                            <fieldset
-                                    class="flex flex-col gap-4 mb-3 relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-[-25px] after:w-[350px] after:h-[1px] after:bg-[repeating-linear-gradient(to_right,#1F1F1F_0,#1F1F1F_6px,transparent_6px,transparent_10px)]">
-                                <legend class="sr-only">Order Configuration</legend>
-                                <div>
-                                    <label for="types" class="block text-sm font-medium text-grey-text-color">Order
-                                        Type</label>
-                                    <select id="types" class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg  hover:border-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue
-         dark:hover:border-active-neon-blue dark:focus:border-active-neon-blue dark:focus:ring-active-neon-blue block w-full p-2.5">
-                                        <option selected>Market Price</option>
-                                        <option value="BP">Bid Price</option>
-                                        <option value="OP">Offer Price</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="quantity" class="block text-sm text-grey-text-color mb-1">Quantity <span
-                                            class="ml-1 text-neon-blue text-xs font-regular outline outline-1 outline-active-neon-blue px-1 rounded-[8px] transition-colors">Shares</span></label>
-                                    <input type="number" id="quantity" aria-describedby="helper-text-explanation"
-                                           class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-[10px] mb-2"
-                                           placeholder="100" required/>
-                                    <div class="flex gap-2" role="group" aria-label="Preset quantities">
-                                        <button type="button"
-                                                class="text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]"
-                                                aria-label="Set quantity to 10">
-                                            10
-                                        </button>
-                                        <button type="button"
-                                                class="text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-gray-700 focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 py-[5px]"
-                                                aria-label="Set quantity to 50">
-                                            50
-                                        </button>
-                                        <button type="button"
-                                                class="text-white bg-dark-panel border border-grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 pt-[5px] py-[5px]"
-                                                aria-label="Set quantity to 100">
-                                            100
-                                        </button>
-                                        <button type="button"
-                                                class="text-white bg-dark-panel border grey-text-color focus:outline-none hover:bg-active-neon-blue focus:ring-4 focus:ring-active-neon-blue transition-all font-medium rounded-full text-sm px-5 pt-[5px] py-[5px]"
-                                                aria-label="Set quantity to 500">
-                                            500
-                                        </button>
-                                        <button type="button" aria-label="More quantity options">
-                                            <img class="w-[16px] h-[16px]" src="assets/images/svg8.svg"
-                                                 alt="More options"/>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="time" class="block text-sm font-medium text-grey-text-color">Time-in-Force</label>
-                                    <select id="time" class="bg-inputColor border border-grey-text-color text-white text-sm rounded-lg  hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-2.5">
-                                        <option selected>Day</option>
-                                        <option value="Week">Week</option>
-                                        <option value="Month">Month</option>
-                                        <option value="Year">Year</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-2 mb-[10px]">
-                                        <label for="stop-price-toggle" class="flex items-center cursor-pointer">
-                                            <div class="relative">
-                                                <input type="checkbox" id="stop-price-toggle" class="sr-only peer" aria-labelledby="stop-price-label"/>
-                                                <div class="block bg-grey-text-color w-[36px] h-[20px] rounded-full peer-checked:bg-neon-blue"></div>
-                                                <div class="dot absolute left-1 top-1 bg-dark-bg w-[12px] h-[12px] rounded-full transition"></div>
-                                            </div>
-                                        </label>
-                                        <span id="stop-price-label" class="text-white font-medium text-sm">
-                                            Stop Price
-                                        </span>
-                                    </div>
-                                    <div class="relative">
-                                        <label for="price" class="sr-only">Stop Price Value</label>
-                                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-grey-text-color" aria-hidden="true">$</span>
-                                        <input type="number" id="price" min="400" step="0.01" aria-describedby="stop-loss-warning" class="bg-dark-panel border border-grey-text-color text-white text-sm rounded-lg hover:border-active-neon-blue focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all block w-full p-2.5 pl-8 mb-[6px]" placeholder="400.00" required/>
-                                    </div>
-                                    <p id="stop-loss-warning" class="text-grey-text-color text-sm">Est. Loss: <span
-                                            class="text-red text-sm">12,057.36</span></p>
-                                </div>
-                            </fieldset>
-
-                            <article class="summary text-sm text-gray-400" aria-labelledby="order-summary">
-                                <h3 id="order-summary" class="sr-only">Order Summary</h3>
-                                <dl class="flex flex-col flex-1 gap-[5px] mb-[15px]">
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color text-sm">Buying Power:</dt>
-                                        <dd class="text-white text-sm">$122,912.50</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color text-sm">Transaction Fees:</dt>
-                                        <dd class="text-white text-sm">$4.00</dd>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <dt class="text-grey-text-color text-sm ">Estimated Total:</dt>
-                                        <dd class="text-white text-sm">$40,000</dd>
-                                    </div>
-                                </dl>
-                            </article>
-
-                            <div class="flex flex-col">
-                                <button type="button" class="text-white bg-green mb-4 py-2 rounded-[8px] hover:bg-active-neon-blue transition-colors" aria-label="Buy Microsoft stock">
-                                    Buy MSFT
-                                </button>
-                                <button type="button" class="flex items-center justify-center gap-1 text-white text-xs hover:text-neon-blue transition-colors" aria-label="View disclaimer">
-                                    Disclaimer
-                                    <img class="w-[16px] h-[16px]" src="assets/images/arrow.svg" alt="Arrow icon" aria-hidden="true"/>
-                                </button>
-                            </div>
-                        </form>
-                    </article>
-                    <article class="time-sales mt-6 text-xs text-gray-400 overflow-hidden"
-                             aria-labelledby="time-sales-heading">
-                        <div class="bg-dark-panel px-6 pt-4 pb-5 rounded-t-[4px] border-gray-600 text-base font-semibold text-white flex items-center justify-between">
-                            <h3 id="time-sales-heading" class="">Time & Sales</h3>
-                            <img src="assets/images/lines.svg" alt="Options menu" class="w-[16px] h-[16px]">
-                        </div>
-                        <div id="content" class="flex flex-col gap-[13px] h-[174px] overflow-y-auto custom-scrollbar pl-[26px] pr-[19px]"></div>
-                    </article>
-                </aside>
-            </div>
+                    <!-- Time & Sales data container (populated by JavaScript) -->
+                    <div id="content" class="flex flex-col gap-[13px] h-[174px] overflow-y-auto custom-scrollbar pl-[26px] pr-[19px]"></div>
+                </article>
+            </aside>
         </main>
     </div>
 </div>
+
+<!-- 
+==============================================
+EXTERNAL SCRIPTS
+TradingView chart widget configuration
+==============================================
+-->
 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 <script type="text/javascript">
+    // Initialize TradingView chart widget with MSFT stock data
     new TradingView.widget({
         container_id: "tradingview_chart",
         width: "100%",
         height: 734,
         symbol: "NASDAQ:MSFT",
-        interval: "60",
+        interval: "60",          // 60-minute interval
         timezone: "Etc/UTC",
-        theme: "dark",
-        style: "1",
+        theme: "dark",           // Dark theme to match dashboard
+        style: "1",              // Candle chart style
         locale: "en",
         enable_publishing: false,
         hide_top_toolbar: false,
@@ -480,6 +520,7 @@
         allow_symbol_change: true,
         details: false,
         calendar: true,
+        // Technical indicators to display on chart
         studies: ["RSI@tv-basicstudies", "MAExp@tv-basicstudies"],
     });
 </script>
